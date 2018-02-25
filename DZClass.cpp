@@ -61,6 +61,7 @@ void sortByRevenue(Company companies[], int size) {
 			}
 		}
 
+	//вывод отсортированного массива
 	for (int i = 0; i < 4; i++) {
 		cout << companies[i].getName() << " - " << companies[i].getRevenue() << endl;
 	}
@@ -109,6 +110,7 @@ int main()
 	companies[2] = intel;
 	companies[3] = netflix;
 
+	//вывод массива
 	for (int i = 0; i < 4; i++) {
 		cout << companies[i].getName() << " - " << companies[i].getRevenue() << endl;
 	}
