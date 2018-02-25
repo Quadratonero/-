@@ -70,8 +70,6 @@ void sortByRevenue(Company companies[], int size) {
 	cout << endl;
 }
 
-
-
 Company findByName(Company companies[], int size, string name) {
 	bool found = false;
 	int i = 0;
@@ -99,10 +97,15 @@ int main()
 
 	Company companies[4];
 
-	companies[0] = new Company apple("Apple", 129, 123000);;
-	companies[1] = new Company tesla("Tesla", 11, 33000);;
-	companies[2] = new Company intel("Intel", 62, 106000);;
-	companies[3] = new Company netflix("Netflix", 11, 5400);
+	Company apple("Apple", 129, 123000);
+	Company tesla("Tesla", 11, 33000);
+	Company intel("Intel", 62, 106000);
+	Company netflix("Netflix", 11, 5400);
+
+	companies[0] = apple;
+	companies[1] = tesla;
+	companies[2] = intel;
+	companies[3] = netflix;
 
 	//вывод массива
 	for (int i = 0; i < 4; i++) {
