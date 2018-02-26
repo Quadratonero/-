@@ -70,7 +70,7 @@ void sortByRevenue(Company companies[], int size) {
 	cout << endl;
 }
 
-Company findByName(Company companies[], int size, string name) {
+Company *findByName(Company companies[], int size, string name) {
 	bool found = false;
 	int i = 0;
 	while (i < size) {
@@ -82,11 +82,11 @@ Company findByName(Company companies[], int size, string name) {
 	}
 
 	if (found) {
-		return companies[i];
+		return &companies[i];
 	}
 	else
 	{
-		return new Company();
+		return nullptr;
 	}
 
 }
@@ -115,8 +115,17 @@ int main()
 
 	sortByRevenue(companies, 4);
 
-	findByName(companies, 4, "Tesla");
-	findByName(companies, 4, "Microsoft");
+
+	
+
+if(findByName(companies, 4, "Tesla")==nullptr){
+cout<<"Company not found";}else{cout<<findByName(companies, 4, "Tesla")->getName();}
+	
+	
+if(findByName(companies, 4, "Microsoft")==nullptr){
+cout<<"Company not found";}else{cout<<findByName(companies, 4, "Microsoft")->getName();}
+	
+	
 
 	_getch();
 }
