@@ -33,6 +33,7 @@ int main(int argc, char *argv[])
 	}
 	else {
 		cout << "PNG signature - [WRONG]" << endl << endl;
+		return 3;
 	}
 
 	unsigned char IHDRlength[4] = { 0 };
@@ -56,7 +57,7 @@ int main(int argc, char *argv[])
 	}
 	else {
 		cout << "IHDR chunk - [WRONG]" << endl << endl;
-
+		return 3;
 	}
 
 	in.seekg(-12, ios_base::end);
@@ -67,6 +68,7 @@ int main(int argc, char *argv[])
 	}
 	else {
 		cout << "IEND chunk - [WRONG]" << endl << endl;
+		return 4;
 	}
 
 	char IDATname[5] = { 0 };
@@ -98,11 +100,12 @@ int main(int argc, char *argv[])
 
 	if (!thereIsOneIDAT) {
 		cout << "There is no IDAT chunks" << endl << endl;
-	}
-	else {
-		cout << "[END]";
+		return 5;
 	}
 
-	_getch();
+	cout << "[THIS IS THE CORRECT END]";
+
+	return 0;
 }
+
 
